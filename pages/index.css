@@ -34,10 +34,10 @@
 @import url(../blocks/popup/__title/popup__title.css);
 
 @import url(../blocks/button/button.css);
-@import url(../blocks/button/__add/button__add.css);
-@import url(../blocks/button/__edit/button__edit.css);
-@import url(../blocks/button/__exit/button__exit.css);
-@import url(../blocks/button/__submit/button__submit.css);
+@import url(../blocks/button/__type/_add/button__type_add.css);
+@import url(../blocks/button/__type/_exit/button__type_exit.css);
+@import url(../blocks/button/__type/__edit/button__type_edit.css);
+@import url(../blocks/button/__type/_submit/button__type_submit.css);
 
 
 

@@ -1,4 +1,4 @@
-.button__exit {
+.button__type_exit {
     background-image: url(../../../images/Close\ Icon.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 550px) {
-    .button__exit {
+    .button__type_exit {
         top: -54px;
         right: 0;
         width: 26px;
