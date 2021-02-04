@@ -4,7 +4,7 @@ let editButton = profile.querySelector('.button_edit');
 let popup = main.querySelector('.popup');
 let exitButton = popup.querySelector('.button_exit');
 let form = popup.querySelector('.popup__field');
-let submitButton = form.querySelector('.button_submit');
+let submitButton = form.querySelector('.button__submit');
 
 function togglePopup () {
     popup.classList.toggle('popup__opened');
