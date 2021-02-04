@@ -1,4 +1,4 @@
-.button__type_edit {
+.button_edit {
     align-self: flex-end;
     background-image: url(../../../images/Edit\ Button.svg);
     background-position: center;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .button__type_edit {
+    .button_edit {
         width: 18px;
         height: 18px;
     }

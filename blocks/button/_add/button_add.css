@@ -1,4 +1,4 @@
-.button__type_add {
+.button_add {
     background-image: url(../../../images/add_btn.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .button__type_add {
+    .button_add {
         width: 100%;
     }
 }
