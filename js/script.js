@@ -1,19 +1,21 @@
 let main = document.querySelector('.main');
 let profile = main.querySelector('.profile');
-let editButton = profile.querySelector('.button__edit');
+let editButton = profile.querySelector('.button_edit');
 let popup = main.querySelector('.popup');
-let exitButton = popup.querySelector('.button__exit');
+let exitButton = popup.querySelector('.button_exit');
 let form = popup.querySelector('.popup__field');
-let submitButton = form.querySelector('.button__submit');
+let submitButton = form.querySelector('.button_submit');
 
 function togglePopup () {
     popup.classList.toggle('popup__opened');
 }
+
 editButton.addEventListener('click', togglePopup); 
 
 function removePopup () {
     popup.classList.remove('popup__opened');
 }
+
 exitButton.addEventListener('click', removePopup); 
 
 let newName = form.querySelector('.popup__name');
