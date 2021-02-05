@@ -7,13 +7,13 @@ let form = popup.querySelector('.popup__field');
 let submitButton = form.querySelector('.popup__submit');
 
 function togglePopup () {
-    popup.classList.toggle('popup__opened');
+    popup.classList.toggle('popup_opened');
 }
 
 editButton.addEventListener('click', togglePopup); 
 
 function removePopup () {
-    popup.classList.remove('popup__opened');
+    popup.classList.remove('popup_opened');
 }
 
 exitButton.addEventListener('click', removePopup); 
