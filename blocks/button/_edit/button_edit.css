@@ -1,8 +1,6 @@
 .button_edit {
     align-self: flex-end;
-    background-image: url(../../../images/Edit\ Button.svg);
-    background-position: center;
-    background-color: #000;
+    background-image: url(../../../images/edit_btn.svg);
     border: #fff 1px solid;
     width: 24px;
     height: 24px;

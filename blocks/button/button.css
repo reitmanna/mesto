@@ -1,3 +1,8 @@
+.button {
+    background-position: center;
+    background-color: #000;
+}
+
 .button:hover {
     cursor: pointer;
     opacity: 60%;

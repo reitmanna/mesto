@@ -6,12 +6,16 @@
     color: #fff;
     border: none;
     border-radius: 2px;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 550px) {
     .popup__submit { 
         margin: 45px 22px 25px;
         width: 238px;
+        font-size: 14px;
+        line-height: 1.21;
     }
 }
 
