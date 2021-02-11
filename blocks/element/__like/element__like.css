@@ -3,6 +3,7 @@
     background-color: #fff;
     min-width: 22px;
     height: 19px;
+    border: none;
 }
 
 .element__like:hover {

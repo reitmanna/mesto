@@ -38,7 +38,7 @@
 @import url(../blocks/button/_add/button_add.css);
 @import url(../blocks/button/_edit/button_edit.css);
 @import url(../blocks/button/_exit/button_exit.css);
-@import url(../blocks/button/_plus/button_plus.css);
+@import url(../blocks/button/__plus/button__plus.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__coryright/footer__copyright.css);
