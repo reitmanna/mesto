@@ -1,11 +1,6 @@
 .profile__edit {
-    max-height: 39px;
     display: flex;
     flex-direction: row;
-}
-
-@media screen and (max-width: 768px) {
-    .profile__edit {
-        max-height: 26px;
-    }
+    justify-content: space-between;
+    align-items: center;
 }

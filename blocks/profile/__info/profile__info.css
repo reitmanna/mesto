@@ -1,6 +1,4 @@
 .profile__info {
-    min-width: 200px;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-content: space-between;

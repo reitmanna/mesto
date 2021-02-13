@@ -1,8 +1,4 @@
 .button__plus {
-    background-image: url(../../../images/add_btn.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-
     width: 22px;
     height: 22px;
 }

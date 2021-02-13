@@ -1,15 +1,17 @@
 .button_edit {
-    align-self: flex-end;
+    align-self: center;
     background-image: url(../../../images/edit_btn.svg);
     border: #fff 1px solid;
     width: 24px;
     height: 24px;
     padding: 0;
+    margin-left: 18px;
 }
 
 @media screen and (max-width: 768px) {
     .button_edit {
         width: 18px;
         height: 18px;
+        margin-left: 10px;
     }
 }
