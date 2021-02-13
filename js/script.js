@@ -4,8 +4,8 @@ let editButton = profile.querySelector('.button_edit');
 let popup = main.querySelector('.popup');
 let exitButton = popup.querySelector('.button_exit');
 let form = popup.querySelector('.popup__field');
-let newName = form.querySelector('.popup_form_name');
-let newJob = form.querySelector('.popup_form_job');
+let newName = form.querySelector('.popup_form-name');
+let newJob = form.querySelector('.popup_form-job');
 let profileName = profile.querySelector('.profile__name');
 let profileJob = profile.querySelector('.profile__job');
 
