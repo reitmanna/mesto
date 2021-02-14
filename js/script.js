@@ -12,8 +12,8 @@ let profileJob = profile.querySelector('.profile__job');
 function togglePopup () {
     popup.classList.toggle('popup_opened');
     if (popup.classList.contains('popup_opened')) {
-        newName.value = profileName.innerHTML;
-        newJob.value = profileJob.innerHTML;
+        newName.value = profileName.textContent;
+        newJob.value = profileJob.textContent;
     }
 }
 
