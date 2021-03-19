@@ -29,58 +29,36 @@
         </button>
       </section>
       <section class="elements">
-        <div class="element">
-          <img class="element__image" src="./images/Karachaevsk.png" alt="Карачаевск">
-          <div class="element__footer">
-            <h3 class="element__text">Карачаевск</h3>
-            <button type="button" class="element__like"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
-          <div class="element__footer">
-            <h3 class="element__text">Гора Эльбрус</h3>
-            <button type="button" class="element__like"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" src="./images/Dombay.png" alt="Домбай">
-          <div class="element__footer">
-            <h3 class="element__text">Домбай</h3>
-            <button type="button" class="element__like"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" src="./images/Elbrus.png" alt="Гора Эльбрус">
-          <div class="element__footer">
-            <h3 class="element__text">Гора Эльбрус</h3>
-            <button class="element__like"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" src="./images/Dombay.png" alt="Домбай">
-          <div class="element__footer">
-            <h3 class="element__text">Домбай</h3>
-            <button type="button" class="element__like"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__image" src="./images/Karachaevsk.png" alt="Карачаево-Черкесия">
-          <div class="element__footer">
-            <h3 class="element__text">Карачаево-Черкесия</h3>
-            <button type="button" class="element__like"></button>
-          </div>
-        </div>
       </section>
       <section class="popup">
-        <div class="popup__container">
-          <button type="button" class="button button_exit"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form name="profname" class="popup__field">
-            <input name="name" class="popup__form popup__form_type_name" type="text" placeholder="Имя">
-            <input name="job" class="popup__form popup__form_type_job" type="text" placeholder="О себе">
-            <button aria-label="Close" type="submit" class="popup__submit">Сохранить</button>
-          </form>
+        <div class="popup__profile">
+          <div class="popup__container">
+            <button type="button" class="button button_exit button_exit_profile"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form name="profname" class="popup__field">
+              <input name="name" class="popup__form popup__form_type_name" type="text" placeholder="Имя">
+              <input name="job" class="popup__form popup__form_type_job" type="text" placeholder="О себе">
+              <button aria-label="Close" type="submit" class="popup__submit">Сохранить</button>
+            </form>
+          </div>
+        </div>
+        <div class="popup__card">
+          <div class="popup__container">
+            <button type="button" class="button button_exit button_exit_card"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form name="profname" class="popup__field">
+              <input name="title" class="popup__form popup__form_type_title" type="text" placeholder="Название">
+              <input name="link" class="popup__form popup__form_type_link" type="text" placeholder="Ссылка на картинку">
+              <button aria-label="Close" type="submit" class="popup__submit">Создать</button>
+            </form>
+          </div>
+        </div>
+        <div class="popup__image">
+          <div class="popup__block">
+            <button type="button" class="button button_exit button_exit_image"></button>
+            <img class="popup__photo">
+            <p class="popup__paragraph"></p>
+          </div>
         </div>
       </section>
     </main> 
@@ -88,6 +66,19 @@
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer> 
   </div>
+  <template class="element-template">
+    <div class="element">
+      <div class="element__container">
+        <button type="button" class="button button_trash"></button>
+        <button type="button" class="button_image"><img class="element__image">
+        </button>
+      </div>
+      <div class="element__footer">
+        <h3 class="element__text"></h3>
+        <button type="button" class="element__like"></button>
+      </div>
+    </div>
+  </template>
   <script src="./js/script.js"></script>
 </body>
 </html>

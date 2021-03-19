@@ -1,0 +1,8 @@
+.button_image {
+    border-radius: 10px 10px 0 0;
+    max-height: 282px;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.button_trash {
+    background-image: url(../../../images//Trash.svg);
+    background-color: rgba(0, 0, 0, 0);
+    width: 18px;
+    min-height: 20px;
+    border: none;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    z-index: 1;
+}
