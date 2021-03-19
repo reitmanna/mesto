@@ -8,15 +8,16 @@ let cards = document.querySelector('.elements');
 let cardTemplate = document.querySelector('.element-template').content;
 
 let popup = main.querySelector('.popup');
-let form = popup.querySelector('.popup__field');
+const profileForm = popup.querySelector('.popup__field_profile');
+const cardForm = popup.querySelector('.popup__field_card');
 
 let popupProfile = popup.querySelector('.popup__profile');
-let newName = form.querySelector('.popup__form_type_name');
-let newJob = form.querySelector('.popup__form_type_job');
+let newName = profileForm.querySelector('.popup__form_type_name');
+let newJob = profileForm.querySelector('.popup__form_type_job');
 
 let popupCard = popup.querySelector('.popup__card');
-let newCardTitle = form.querySelector('.popup__form_type_title');
-let newCardLink = form.querySelector('.popup__form_type_link');
+let newCardTitle = cardForm.querySelector('.popup__form_type_title');
+let newCardLink = cardForm.querySelector('.popup__form_type_link');
 
 let popupImage = popup.querySelector('.popup__image');
 let popupPhoto = popupImage.querySelector('.popup__photo');
@@ -72,7 +73,7 @@ function formSubmitHandler (evt) {
     profileJob.textContent = newJob.value;
     togglePopupProfile()
 }
-form.addEventListener('submit', formSubmitHandler);
+profileForm.addEventListener('submit', formSubmitHandler);
 
 exitProfileButton.addEventListener('click', togglePopupProfile);
 editButton.addEventListener('click', togglePopupProfile); 
@@ -109,7 +110,6 @@ const imageButton = cardElement.querySelector('.button_image');
   }
   imageButton.addEventListener('click', addPopupImage);
   exitImageButton.addEventListener('click', removePopupImage);
-
   console.log(cardElement);
   return cardElement;
 }
@@ -132,8 +132,9 @@ function addInfoForm(cardItem) {
 function formSubmitCard (evt) {
   evt.preventDefault();
   addInfoForm(createCard());
+  togglePopupCard()
 };
-form.addEventListener('submit', formSubmitCard);
+cardForm.addEventListener('submit', formSubmitCard);
 
 
 
