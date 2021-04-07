@@ -33,29 +33,29 @@
       <section class="popup">
         <div class="popup__section popup__section_profile">
           <div class="popup__container">
-            <button type="button" class="button button_exit button_exit_profile"></button>
+            <button type="button" class="button button_exit"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form name="profname" class="popup__field popup__field_profile">
-              <input name="name" class="popup__form popup__form_type_name" type="text" placeholder="Имя">
-              <input name="job" class="popup__form popup__form_type_job" type="text" placeholder="О себе">
+              <input name="name" class="popup__form popup__form_type_name" type="text" placeholder="Имя" required="required">
+              <input name="job" class="popup__form popup__form_type_job" type="text" placeholder="О себе" required="required">
               <button aria-label="Close" type="submit" class="popup__submit">Сохранить</button>
             </form>
           </div>
         </div>
         <div class="popup__section popup__section_card">
           <div class="popup__container">
-            <button type="button" class="button button_exit button_exit_card"></button>
+            <button type="button" class="button button_exit"></button>
             <h2 class="popup__title">Новое место</h2>
             <form name="cardname" class="popup__field popup__field_card">
-              <input name="title" class="popup__form popup__form_type_title" type="text" placeholder="Название">
-              <input name="link" class="popup__form popup__form_type_link" type="text" placeholder="Ссылка на картинку">
+              <input name="title" class="popup__form popup__form_type_title" type="text" placeholder="Название" required="required">
+              <input name="link" class="popup__form popup__form_type_link" type="url" placeholder="Ссылка на картинку" required="required">
               <button aria-label="Close" type="submit" class="popup__submit">Создать</button>
             </form>
           </div>
         </div>
         <div class="popup__section popup__section_image">
           <div class="popup__block">
-            <button type="button" class="button button_exit button_exit_image"></button>
+            <button type="button" class="button button_exit"></button>
             <img class="popup__photo">
             <p class="popup__paragraph"></p>
           </div>
@@ -70,8 +70,7 @@
     <div class="element">
       <div class="element__container">
         <button type="button" class="button button_trash"></button>
-        <button type="button" class="button_image"><img class="element__image">
-        </button>
+        <img class="element__image">
       </div>
       <div class="element__footer">
         <h3 class="element__text"></h3>
@@ -79,7 +78,8 @@
       </div>
     </div>
   </template>
-  <script src="./js/script.js"></script>
+  <script src="./js/array.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>
 
