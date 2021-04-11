@@ -7,11 +7,7 @@ const profileJob = profile.querySelector('.profile__job');
 const cards = document.querySelector('.elements');
 const cardTemplate = document.querySelector('.element-template').content;
 
-const cardText = cardTemplate.querySelector('.element__text');
-const cardImage = cardTemplate.querySelector('.element__image');
-
 const allPopup = main.querySelector('.popup');
-const allSectionOfPopup = allPopup.querySelector('.popup__section');
 const profileForm = allPopup.querySelector('.popup__field_profile');
 const cardForm = allPopup.querySelector('.popup__field_card');
 
@@ -50,28 +46,25 @@ function closePopup(modalWindowForm) {
 };
 
 
-initialCards.forEach((addCard) => addInitialArrayOfCard(addCard, createCard()));
+const cardsArr = initialCards.map(createCard);
+cards.append(...cardsArr);
 
-
-function addInitialArrayOfCard(addCard, cardItem) {
-  cardText.textContent = addCard.name;
-  cardImage.alt = addCard.name;
-  cardImage.src = addCard.link;
-  cards.append(cardItem);
+function addNewCard() {
+  const newCard = createCard({name: newCardTitle.value, link: newCardLink.value});
+  cards.prepend(newCard);
 }
 
-function addInfoToTheForm(cardItem) {
-  cardImage.src = newCardLink.value;
-  cardImage.alt = newCardTitle.value;
-  cardText.textContent = newCardTitle.value;
-  cards.prepend(cardItem);
-}
-
-function createCard() {
+function createCard(addCard) {
+  
   const cardElement = cardTemplate.cloneNode(true);
   const likeButton = cardElement.querySelector('.element__like');
   const deleteButton = cardElement.querySelector('.button_trash');
   const cardImage = cardElement.querySelector('.element__image');
+  const cardText = cardElement.querySelector('.element__text');
+
+  cardText.textContent = addCard.name;
+  cardImage.alt = addCard.name;
+  cardImage.src = addCard.link;
 
   likeButton.addEventListener('click', function (evt) {
     evt.target.classList.toggle('element__like_active')
@@ -95,19 +88,19 @@ function createCard() {
   return cardElement;
 }
 
+
+function submitCardForm(evt) {
+  evt.preventDefault();
+  addNewCard(createCard);
+  closePopup(popupCard);
+}
+
 function submitProfileForm(evt) {
   evt.preventDefault();
   profileName.textContent = newName.value;
   profileJob.textContent = newJob.value;
   closePopup(popupProfile);
 }
-
-function submitCardForm(evt) {
-  evt.preventDefault();
-  addInfoToTheForm(createCard());
-  closePopup(popupCard);
-}
-
 
 cardForm.addEventListener('submit', submitCardForm);
 profileForm.addEventListener('submit', submitProfileForm);
