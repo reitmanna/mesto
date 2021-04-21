@@ -25,20 +25,4 @@
     }
 }
 
-.popup__input-error {
-    display: none;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.25;
-    color: red;
-    padding-top: 5px;
-    padding-bottom: 13px;
-    margin-left: 36px;
-    box-sizing: border-box;
-}
-
-.popup__input-error_active {
-    display: flex;
-}
-
 
