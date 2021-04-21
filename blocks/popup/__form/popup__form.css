@@ -14,9 +14,9 @@
 }
 
 .popup__form:invalid {
-    border-bottom: 1px solid red; 
+    border-bottom: 1px solid red;
     margin-bottom: 0;
-  }
+}
 
 
 @media screen and (max-width: 550px) {
