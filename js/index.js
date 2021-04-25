@@ -65,7 +65,15 @@ function profileAddForm() {
   newName.value = profileName.textContent;
   newJob.value = profileJob.textContent;
   openPopup(popupProfile);
+  // updateForm(popupProfile);
 }
+
+addButton.addEventListener('click', () => {
+  openPopup(popupCard);
+  cardInput.reset();
+  // updateForm();
+});
+
 
 function submitProfileForm(evt) {
   evt.preventDefault();
@@ -73,6 +81,8 @@ function submitProfileForm(evt) {
   profileJob.textContent = newJob.value;
   closePopup(popupProfile);
 }
+
+
 
 function submitCardForm(evt) {
   evt.preventDefault();
@@ -140,7 +150,3 @@ exitImageButton.addEventListener('click', () => { closePopup(popupImage) });
 
 editButton.addEventListener('click', profileAddForm);
 
-addButton.addEventListener('click', () => {
-  openPopup(popupCard);
-  cardInput.reset();
-});

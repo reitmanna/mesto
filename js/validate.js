@@ -14,7 +14,6 @@ const hideInputError = (formElement, inputElement, validationSettings) => {
   errorElement.textContent = '';
 };
 
-
 const checkInputValidity = (formElement, inputElement, validationSettings) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, validationSettings);
@@ -73,3 +72,18 @@ enableValidation({
   inputErrorClass: 'popup__input_error',
   errorClass: 'popup__input-error_active'
 });
+
+/** 
+function updateForm(popupProfile) {
+  const inputList = popupProfile.querySelectorAll(inputSelector);
+
+  inputList.forEach((inputElement) => {
+  const errorElement = document.querySelectorAll(`.${inputElement.id}-error`);
+  buttonElement.disabled = true;
+  buttonElement.classList.add('popup__submit_inactive');
+  inputElement.classList.remove('popup__input_error');
+  errorElement.classList.remove('popup__input-error_active');
+  });
+}
+
+*/
