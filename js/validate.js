@@ -26,7 +26,7 @@ const checkInputValidity = (formElement, inputElement, validationSettings) => {
 // поиск и обработка всех форм
 // принимаю параметры в определении функции enableValidation 
 const enableValidation = (validationSettings) => {
-  const formList = Array.from(document.querySelector(validationSettings.formSelector));
+  const formList = Array.from(document.querySelectorAll(validationSettings.formSelector));
   formList.forEach((formElement) => {
       setEventListeners(formElement, validationSettings);
   }); 
@@ -35,8 +35,8 @@ const enableValidation = (validationSettings) => {
 
 // добавить обработчики всем полям формы
 const setEventListeners = (formElement, validationSettings) => {
-  const inputList = Array.from(document.querySelector(validationSettings.inputSelector));
-  const buttonElement = document.querySelector(validationSettings.submitButtonSelector);
+  const inputList = Array.from(formElement.querySelectorAll(validationSettings.inputSelector));
+  const buttonElement = formElement.querySelector(validationSettings.submitButtonSelector);
   toggleButtonState(inputList, buttonElement, validationSettings);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
@@ -55,7 +55,7 @@ const hasInvalidInput = (inputList) => {
 
 // блокировка кнопки 'submit'
 const toggleButtonState = (inputList, buttonElement, validationSettings) => {
-  if (hasInvalidInput(inputList)) {
+  if (hasInvalidInput(inputList, validationSettings)) {
     buttonElement.disabled = true;
     buttonElement.classList.add(validationSettings.inactiveButtonClass);
   } else {
