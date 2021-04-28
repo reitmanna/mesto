@@ -36,16 +36,19 @@ function findOpenedPopup() {
   return popupOpened;
 }
 
+// общая функция открытия
 function openPopup(modalWindowForm) {
   modalWindowForm.classList.add('popup_opened');
-  main.addEventListener('keyup', closePopupWithEscape);
+  document.addEventListener('keyup', closePopupWithEscape);
 }
 
+// общая функция закрытия
 function closePopup(modalWindowForm) {
   modalWindowForm.classList.remove('popup_opened');
-  main.removeEventListener('keyup', closePopupWithEscape);
+  document.removeEventListener('keyup', closePopupWithEscape);
 };
 
+// закрытие через Esc
 function closePopupWithEscape(evt) {
   const popupOpened = findOpenedPopup();
   if ((evt.key === 'Escape') && popupOpened) {
@@ -53,6 +56,7 @@ function closePopupWithEscape(evt) {
   }
 }
 
+// закрытие через Overlay
 function closeWithOverlay(evt) {
   const popupOpened = findOpenedPopup();
   if (evt.target.classList.contains('popup_opened')) {
@@ -61,17 +65,25 @@ function closeWithOverlay(evt) {
   }
 };
 
+// 
 function profileAddForm() {
   newName.value = profileName.textContent;
   newJob.value = profileJob.textContent;
   openPopup(popupProfile);
-  // updateForm(popupProfile);
 }
+
+function openFullImage(evt) {
+  const openImage = evt.target;
+  popupPhoto.src = openImage.src;
+  popupPhoto.alt = openImage.alt;
+  popupParagraph.textContent = openImage.alt;
+  openPopup(popupImage);
+}
+
 
 addButton.addEventListener('click', () => {
   openPopup(popupCard);
   cardInput.reset();
-  // updateForm();
 });
 
 
@@ -81,7 +93,6 @@ function submitProfileForm(evt) {
   profileJob.textContent = newJob.value;
   closePopup(popupProfile);
 }
-
 
 
 function submitCardForm(evt) {
@@ -122,20 +133,12 @@ function createCard(addCard) {
     const card = deleteButton.closest('.element');
     card.remove();
   });
-
-  function openFullImage(evt) {
-    const openImage = evt.target;
-    popupPhoto.src = openImage.src;
-    popupPhoto.alt = openImage.alt;
-    popupParagraph.textContent = openImage.alt;
-    openPopup(popupImage);
-  }
-
+  
   cardImage.addEventListener('click', openFullImage);
 
   return cardElement;
-}
 
+}
 
 profileInput.addEventListener('submit', submitProfileForm);
 cardInput.addEventListener('submit', submitCardForm);
@@ -149,4 +152,5 @@ exitCardButton.addEventListener('click', () => { closePopup(popupCard) });
 exitImageButton.addEventListener('click', () => { closePopup(popupImage) });
 
 editButton.addEventListener('click', profileAddForm);
+
 

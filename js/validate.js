@@ -1,4 +1,4 @@
-// если некорректно - показать сообщение об ошибке
+// показать сообщение об ошибке
 const showInputError = (formElement, inputElement, errorMessage, validationSettings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(validationSettings.inputErrorClass);
@@ -6,7 +6,7 @@ const showInputError = (formElement, inputElement, errorMessage, validationSetti
   errorElement.classList.add(validationSettings.errorClass);
 };
 
-// если корректно - скрыть сообщение об ошибке
+// скрыть сообщение об ошибке
 const hideInputError = (formElement, inputElement, validationSettings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(validationSettings.inputErrorClass);
@@ -25,12 +25,34 @@ const checkInputValidity = (formElement, inputElement, validationSettings) => {
 // поиск и обработка всех форм
 // принимаю параметры в определении функции enableValidation 
 const enableValidation = (validationSettings) => {
+  addButton.addEventListener('click', () => {
+  updateInput(validationSettings);
+  updateButton(validationSettings);
+  }); 
+  editButton.addEventListener('click', () => {
+  updateInput(validationSettings);
+  updateButton(validationSettings);
+  });
   const formList = Array.from(document.querySelectorAll(validationSettings.formSelector));
   formList.forEach((formElement) => {
       setEventListeners(formElement, validationSettings);
   }); 
 }
 
+const updateButton = (validationSettings) => {
+  const buttonElement = document.querySelectorAll(validationSettings.submitButtonSelector);
+  buttonElement.forEach((item) => {
+    item.disabled = true;
+    item.classList.add(validationSettings.inactiveButtonClass);
+  })
+}
+
+const updateInput = (validationSettings) => {
+  const inputList = document.querySelectorAll(validationSettings.inputSelector);
+  inputList.forEach((item) => {
+    hideInputError(item.closest(validationSettings.formSelector), item, validationSettings);
+  })
+}
 
 // добавить обработчики всем полям формы
 const setEventListeners = (formElement, validationSettings) => {
@@ -63,27 +85,15 @@ const toggleButtonState = (inputList, buttonElement, validationSettings) => {
   }
 }
 
- // передаю при вызове функции enableValidation аргумент validationSettings
-enableValidation({
+const validationSettings = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__submit',
   inactiveButtonClass: 'popup__submit_inactive',
   inputErrorClass: 'popup__input_error',
   errorClass: 'popup__input-error_active'
-});
-
-/** 
-function updateForm(popupProfile) {
-  const inputList = popupProfile.querySelectorAll(inputSelector);
-
-  inputList.forEach((inputElement) => {
-  const errorElement = document.querySelectorAll(`.${inputElement.id}-error`);
-  buttonElement.disabled = true;
-  buttonElement.classList.add('popup__submit_inactive');
-  inputElement.classList.remove('popup__input_error');
-  errorElement.classList.remove('popup__input-error_active');
-  });
 }
 
-*/
+ // передаю при вызове функции enableValidation аргумент validationSettings
+enableValidation(validationSettings);
+
